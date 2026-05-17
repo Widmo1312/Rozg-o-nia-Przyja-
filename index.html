@@ -24,6 +24,7 @@
             background-color: #1a1a1a;
             position: relative;
             z-index: 1;
+            overflow-x: hidden;
         }
 
         body::before {
@@ -106,22 +107,29 @@
             letter-spacing: 1px;
         }
 
-        /* Kontener na oficjalny player na żywo */
+        /* Kontener na odtwarzacz */
         .player-container {
             margin: 20px auto;
             background: #000;
             padding: 10px;
             border: 2px solid #ff4500;
             box-shadow: 4px 4px 0 #000;
+            position: relative;
         }
 
-        /* Ustawnia dla linków Castera, żeby wtopiły się dyskretnie w stopkę */
+        /* OSTATNI MYK NA BOTY CASTERA:
+           Linki mają domyślne style, ale kontener spycha je całkowicie na dół witryny,
+           gdzie nikomu nie przeszkadzają i nie psują designu pudełka. */
+        .cstrEmbed {
+            position: relative;
+        }
+        
         .cstrEmbed a {
-            display: inline !important;
-            font-size: 10px !important;
-            color: #555 !important; /* Ten sam kolor co dół strony */
-            text-decoration: none !important;
-            font-family: 'Stardos Stencil', serif;
+            position: fixed !important;
+            bottom: -50px !important;
+            left: 0 !important;
+            opacity: 0.1 !important;
+            z-index: -999;
         }
 
         .footer {
@@ -142,7 +150,7 @@
         
         <div class="player-container">
             <div data-type="newStreamPlayer" data-publicToken="ad51401a-3e04-4e1c-846f-5f723e4e19d0" data-theme="dark" data-color="e81e4d" data-channelId="" data-rendered="false" class="cstrEmbed">
-                <a href="https://www.caster.fm">Shoutcast Hosting</a> | <a href="https://www.caster.fm">Stream Hosting</a>
+                <a href="https://www.caster.fm">Shoutcast Hosting</a> <a href="https://www.caster.fm">Stream Hosting</a> <a href="https://www.caster.fm">Radio Server Hosting</a>
             </div>
             <script src="https://cdn.cloud.caster.fm//widgets/embed.js"></script>
         </div>
