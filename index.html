@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>ROZGŁOŚNIA PRZYJAŹŃ - Warszawa</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Stardos+Stencil:wght@700&display=swap');
 
         body {
-           
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScHCeLrewsYbT6t2lWWv3ATenoDyJMHpZ-Ng&s'); /* Przykładowe tło, możesz zmienić */
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScHCeLrewsYbT6t2lWWv3ATenoDyJMHpZ-Ng&s'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: #ffffff;
-            font-family: 'Anton', 'Arial Black', sans-serif; /* Twarde, ostre litery */
+            font-family: 'Anton', 'Arial Black', sans-serif; 
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -23,18 +23,18 @@
             min-height: 100vh;
             text-align: center;
             background-color: #1a1a1a;
+            position: relative;
+            z-index: 1;
         }
 
-        
         body::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Zmieniaj krycie, żeby rozjaśnić/przyciemnić */
+            background: rgba(0, 0, 0, 0.7); 
             z-index: -1;
         }
 
-       
         h1 {
             font-family: 'Anton', sans-serif;
             font-size: 4rem;
@@ -49,14 +49,13 @@
         p.slogan {
             font-family: 'Stardos Stencil', serif;
             font-size: 1.5rem;
-            color: #ffcc00; /* Zdzierana żółć */
+            color: #ffcc00; 
             background-color: rgba(0, 0, 0, 0.8);
             padding: 5px 15px;
             margin-bottom: 40px;
             text-transform: uppercase;
         }
 
-        
         .radio-box {
             background-color: rgba(18, 18, 18, 0.9);
             border: 4px solid #333;
@@ -66,7 +65,6 @@
             position: relative;
         }
 
-        
         .radio-box::after {
             content: 'HALO?';
             position: absolute;
@@ -83,7 +81,6 @@
             transform: rotate(15deg);
         }
 
-        
         .phone-sticker {
             position: absolute;
             bottom: -20px;
@@ -94,7 +91,7 @@
             border-radius: 5px;
             transform: rotate(-10deg);
             box-shadow: 5px 5px 0 #000;
-            background-image: url('https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/453506544_122107236314428702_5533674876366856757_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=kh6vApbfhQEQ7kNvwFQV2R3&_nc_oc=AdqiCvBJWkSOtP6iU9WTEyyksI7i4uHvTsnL-VisfbNPBZk1l9cADDBnDtlisID0UWY&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=P4tUiV8JnqykuP-mrfdYHg&_nc_ss=7b289&oh=00_Af76GbkDQQ1XqbRQR8RTnDgC7dxiF6DzMt01ZRayzdSVTA&oe=6A0F72B2'); /* Dodaj grafikę słuchawki */
+            background-image: url('https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/453506544_122107236314428702_5533674876366856757_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=kh6vApbfhQEQ7kNvwFQV2R3&_nc_oc=AdqiCvBJWkSOtP6iU9WTEyyksI7i4uHvTsnL-VisfbNPBZk1l9cADDBnDtlisID0UWY&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=P4tUiV8JnqykuP-mrfdYHg&_nc_ss=7b289&oh=00_Af76GbkDQQ1XqbRQR8RTnDgC7dxiF6DzMt01ZRayzdSVTA&oe=6A0F72B2'); 
             background-size: cover;
             border: 2px solid #000;
         }
@@ -109,7 +106,6 @@
             letter-spacing: 1px;
         }
 
-        
         audio {
             width: 280px;
             height: 45px;
@@ -117,6 +113,7 @@
             background: #000;
             border: 2px solid #ff4500;
             box-shadow: 4px 4px 0 #000;
+            margin-bottom: 20px;
         }
 
         audio::-webkit-media-controls-panel {
@@ -132,6 +129,29 @@
             border-radius: 2px;
         }
 
+        /* UNDERGROUNDOWY PRZYCISK ZAPASOWY */
+        .btn-stream {
+            display: block;
+            background-color: #ff4500;
+            color: #000;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: 'Anton', sans-serif;
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0 #000;
+            cursor: pointer;
+            margin: 15px auto 0 auto;
+            width: fit-content;
+            transition: transform 0.1s;
+        }
+
+        .btn-stream:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
         .footer {
             margin-top: 60px;
             font-size: 0.8rem;
@@ -145,13 +165,17 @@
 
     <div class="radio-box">
         <h1>ROZGŁOŚNIA<br>PRZYJAŹŃ</h1>
-        <p class="slogan"> OD LUDZI DLA LUDZI</p>
+        <p class="slogan">OD LUDZI DLA LUDZI</p>
         <p class="status">#PrzyjaźńZostaje</p>
         
-        <audio controls autoplay>
-    <source src="https://sapircast.caster.fm:11372/EFVIh" type="audio/mpeg">
-    Twoja przeglądarka nie obsługuje odtwarzacza audio.
-</audio>
+        <audio controls id="player">
+            <source src="http://sapircast.caster.fm:11372/EFVlh" type="audio/mpeg">
+            Twoja przeglądarka nie obsługuje odtwarzacza audio.
+        </audio>
+
+        <a href="http://sapircast.caster.fm:11372/EFVlh" target="_blank" class="btn-stream">
+            Odpalać Strumień bezpośrednio
+        </a>
 
         <div class="phone-sticker"></div>
     </div>
